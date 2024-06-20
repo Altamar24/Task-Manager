@@ -61,6 +61,9 @@
 </head>
 
 <body>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{% url 'add_tasks' %}" class="btn btn-primary">Создать задачу</a>
+    </div>
     {% for task in tasks %}
     <div class="task-card">
         <h2>{{ task.title }}</h2>
@@ -74,7 +77,7 @@
         <a href="{% url 'tasks_update' task.id %}" class="btn btn-primary">Редактировать задачу</a>
         <form method="post" action="{% url 'tasks_delete' pk=task.id %}">
             {% csrf_token %}
-            <button type="submit" class="btn btn-dark btn-sm" onclick="return confirm('Вы уверены, что хотите удалить эту категорию?')">Удалить</button>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Вы уверены, что хотите удалить эту категорию?')">Удалить</button>
         </form>
     </div>
     {% endfor %}
