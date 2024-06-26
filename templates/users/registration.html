@@ -1,0 +1,134 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        .row.justify-content-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .col-lg-8 {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .p-5 {
+            padding: 2rem !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .h4,
+        h1 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .text-gray-900 {
+            color: #3a3b45;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem !important;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #6e707e;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #d1d3e2;
+            border-radius: 0.35rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .form-control-user {
+            border-radius: 10rem;
+            padding: 1.5rem 1rem;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #4e73df;
+            border-color: #4e73df;
+        }
+
+        .btn-user {
+            font-size: 0.8rem;
+            border-radius: 10rem;
+            padding: 1.5rem 1rem;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .btn:hover {
+            color: #fff;
+            background-color: #2e59d9;
+            border-color: #2653d4;
+        }
+    </style>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="p-5">
+                    <div class="text-center">
+                        <h1 class="h4 text-gray-900 mb-4">Регистрация</h1>
+                    </div>
+                    <form class="user" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="{{ form.username.field.widget.input_type }}"
+                                class="form-control form-control-user" id="{{ form.username.field.id_for_label }}"
+                                placeholder="{{ form.username.label }}" name="{{ form.username.name }}">
+                            {{ form.username.errors }}
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input type="{{ form.password1.field.widget.input_type }}"
+                                    class="form-control form-control-user" id="{{ form.password1.field.id_for_label }}"
+                                    placeholder="{{ form.password1.label }}" name="{{ form.password1.name }}">
+                                {{ form.password1.errors }}
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="{{ form.password2.field.widget.input_type }}"
+                                    class="form-control form-control-user" id="{{ form.password2.field.id_for_label }}"
+                                    placeholder="{{ form.password2.label }}" name="{{ form.password2.name }}">
+                                {{ form.password2.errors }}
+                            </div>
+                        </div>
+                        <button href="login.html" class="btn btn-primary btn-user btn-block">
+                            Зарегестрироваться
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

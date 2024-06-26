@@ -21,7 +21,7 @@ class Task(models.Model):
     priority = models.SmallIntegerField(
         default=LOW, choices=STATUSES, verbose_name='Приоритет')
     due_data = models.DateTimeField(
-        default=datetime.now, verbose_name='Срок выполнения') #изменить название на due_date
+        default=datetime.now, verbose_name='Срок выполнения')
     completed = models.BooleanField(default=False, verbose_name='Исполнение')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
