@@ -13,7 +13,7 @@ class UserLoginForm(AuthenticationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'password') #остановился здесь, надо настроить вход и регистрацию, создать модель User и т.д.
+        fields = ('username', 'password')
 
 
 class CreateUser(UserCreationForm):
