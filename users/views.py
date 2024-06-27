@@ -11,6 +11,8 @@ User = get_user_model()
 
 
 class RegistrationView(CreateView):
+    """Класс RegistrationView позволяет зарегестрироваться пользователю"""
+
     model = User
     form_class = CreateUser
     template_name = 'users/registration.html'
@@ -18,11 +20,14 @@ class RegistrationView(CreateView):
 
 
 class UserLoginView(LoginView):
+    """Класс UserLoginView позволяет войти пользователю по логину и паролю"""
+
     template_name = 'users/login.html'
     form_class = UserLoginForm
     success_url = reverse_lazy('')
 
 
 def logout(request):
+    """Метод logout позволяет пользователю выйти из системы"""
     auth.logout(request)
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('users:login'))

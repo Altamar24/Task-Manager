@@ -6,6 +6,27 @@ User = get_user_model()
 
 
 class Task(models.Model):
+    """Класс Task используется для создания модели: 
+    
+    Attributes
+    ----------
+    title : CharField
+        название задачи
+    owner : ForeignKey
+        автор задачи
+    description : TextField
+        описание задачи
+    priority : SmallIntegerField
+        приоритет задачи
+    due_data : DateTimeField
+        срок исполнения задачи
+    completed : BooleanField
+        галочка для отметки исполнения
+    created_at : DateTimeField
+        дата создания задачи
+    updated_at : DateTimeField
+        дата изменения задачи
+    """
     title = models.CharField(max_length=50, verbose_name='Задача')
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='tasks', verbose_name='Автор')
