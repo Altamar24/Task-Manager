@@ -29,5 +29,6 @@ class UserLoginView(LoginView):
 
 def logout(request):
     """Метод logout позволяет пользователю выйти из системы"""
+    
     auth.logout(request)
     return HttpResponseRedirect(reverse('users:login'))
